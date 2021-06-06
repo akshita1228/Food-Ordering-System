@@ -1,0 +1,37 @@
+{% extends 'orders/header.html' %}
+
+
+
+{% block content %}
+
+
+
+    <div class="container">
+
+
+      <h4 style="margin:10px; text-align:center; font-family: 'Open Sans', sans-serif"> Choose one of the Pasta dishes &#x1f35d </h4>
+      <div class="row justify-content-center" style="font-family: 'Open Sans', sans-serif">
+
+        {% for dish in dishes %}
+            <div class="card" id="regular_pizza_card" style="width: 24rem; margin:10px; font-family: Roboto, sans-serif;">
+              <div class="card-body">
+                <h5 class="card-title" >{{dish}}</h5>
+              </div>
+              <button class="btn btn-primary" style="font-family: Roboto, sans-serif; outline: 0;
+              background-color: #1646e6;
+              width: 100%;
+              border: 0;
+              padding: 5px;
+              color: #FFFFFF;
+              font-size: 14px; cursor: pointer;
+              align-content: center;" onclick="add_to_cart({item_description:'{{dish}}' , price:{{dish.price}} })">₹{{dish.price}}</button>
+            </div>
+        {% endfor %}
+
+
+      </div>
+
+    </div>
+
+
+{% endblock %}
